@@ -1,6 +1,8 @@
 package com.bharath.ws.soap;
 
 import org.apache.wss4j.common.ext.WSPasswordCallback;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
@@ -14,10 +16,9 @@ public class UTPasswordCallback implements CallbackHandler {
     // In-memory usernames and passwords
     private Map<String, String> passwords = new HashMap<>();
 
-    public UTPasswordCallback(Map<String, String> passwords) {
+    public UTPasswordCallback() {
         passwords.put("bharath", "bharath");
         passwords.put("cxf", "cxf");
-
     }
 
     @Override
